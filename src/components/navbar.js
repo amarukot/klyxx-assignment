@@ -16,9 +16,20 @@ const Navbar = () => {
             margin: `0 auto`,
             maxWidth: 960,
             padding: `1.45rem 1.0875rem`,
+            display: "flex",
           }}
         >
-          <h1 style={{ margin: 0 }}>NavBar</h1>
+          <Link to="/">
+            <h1 style={{ margin: 0, color: "white", padding: "20px" }}>Home</h1>
+          </Link>
+          <Link to="/cart/">
+            <h1 style={{ margin: 0, color: "white", padding: "20px" }}>Cart</h1>
+          </Link>
+          <Link to="/checkout">
+            <h1 style={{ margin: 0, color: "white", padding: "20px" }}>
+              Checkout
+            </h1>
+          </Link>
         </div>
       </div>
     </>
