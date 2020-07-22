@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 
 // import productsLocal from "../../db/twitch-stickers.json"
 
 const Products = props => {
   const addToCart = e => {
-    console.log("Added to cart" + e.target)
+    console.log("Item added to cart" + e.target)
   }
 
   // map through available products
@@ -20,7 +20,7 @@ const Products = props => {
         }}
         key={index}
       >
-        <img style={{ maxWidth: "300px" }} src={item.img} />
+        <img style={{ maxWidth: "300px" }} src={item.img} alt={item.name} />
         <div>{item.name}</div>
         <div>${item.price}</div>
         <button onClick={addToCart}>ADD TO CART</button>
@@ -35,6 +35,7 @@ const Products = props => {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
+        justifyContent: "center",
       }}
     >
       {allProducts}

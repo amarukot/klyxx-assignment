@@ -6,9 +6,9 @@ const products = require("./twitch-stickers.json")
 const parser = require("body-parser")
 const cors = require("cors")
 
-// const gifRouter = require("./routes/gifs");
+const inventoryRouter = require("../src/routes/inventory")
 
-app.use(parser.urlencoded({ extended: true }))
+// app.use(parser.urlencoded({ extended: true }))
 app.use(parser.json())
 app.use(cors())
 
