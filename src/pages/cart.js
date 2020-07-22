@@ -9,7 +9,7 @@ const Cart = () => {
     <Layout>
       <SEO title="shopping cart" />
 
-      <p>Shopping Cart Page</p>
+      <h1>Shopping Cart Page</h1>
     </Layout>
   )
 }

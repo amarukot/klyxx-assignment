@@ -3,14 +3,14 @@ const app = express()
 const port = 3000
 
 const products = require("./twitch-stickers.json")
-// const parser = require("body-parser");
-// const cors = require("cors")
+const parser = require("body-parser")
+const cors = require("cors")
 
 // const gifRouter = require("./routes/gifs");
 
-// app.use(parser.urlencoded({ extended: true }));
-// app.use(parser.json());
-// app.use(cors())
+app.use(parser.urlencoded({ extended: true }))
+app.use(parser.json())
+app.use(cors())
 
 // app.use("/gifs", gifRouter);
 app.get("/", (req, res) => {
