@@ -8,7 +8,6 @@ const Products = props => {
     console.log("Added to cart" + e.target)
   }
 
-  console.log(props.products)
   // map through available products
   const allProducts = props.products.map((item, index) => {
     return (
