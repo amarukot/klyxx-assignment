@@ -8,6 +8,24 @@ import Products from "../components/products"
 const IndexPage = () => {
   const [products, setProducts] = useState([])
 
+  // SHOPPING CART
+  const [cartItems, setCartItems] = useState([])
+  const addToCart = async e => {
+    e.preventDefault()
+    let thisItemName = e.target
+      .querySelector("[name=itemName]")
+      .getAttribute("value")
+    //const item = new FormData(e.target).get("name")
+    const item = e.target.querySelector("[name=itemName]").getAttribute("value")
+    const price = e.target
+      .querySelector("[name=itemPrice]")
+      .getAttribute("value")
+
+    let newState = [...cartItems, { item: item, price: price }]
+    setCartItems(newState)
+    console.log(`Item added to cart`)
+  }
+
   useEffect(() => {
     fetch("http://localhost:3000/")
       .then(res => res.json())
@@ -18,7 +36,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Twitch Sticker Store" />
-      <Products products={products} />
+      <Products products={products} addToCart={addToCart} />
     </Layout>
   )
 }

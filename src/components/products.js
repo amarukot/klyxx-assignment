@@ -4,27 +4,9 @@ import { useState } from "react"
 
 // import productsLocal from "../../db/twitch-stickers.json"
 
-const Products = props => {
-  const [cartItems, setCartItems] = useState([])
-
-  const addToCart = async e => {
-    e.preventDefault()
-    let thisItemName = e.target
-      .querySelector("[name=itemName]")
-      .getAttribute("value")
-    //const item = new FormData(e.target).get("name")
-    const item = e.target.querySelector("[name=itemName]").getAttribute("value")
-    const price = e.target
-      .querySelector("[name=itemPrice]")
-      .getAttribute("value")
-
-    let newState = [...cartItems, { item: item, price: price }]
-    setCartItems(newState)
-    console.log(`Item added to cart`)
-  }
-
+const Products = ({ products, addToCart }) => {
   // map through all products
-  const allProducts = props.products.map((item, index) => {
+  const allProducts = products.map((item, index) => {
     return (
       <div
         style={{
