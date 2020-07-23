@@ -22,7 +22,7 @@ const Products = props => {
       >
         <img style={{ maxWidth: "300px" }} src={item.img} alt={item.name} />
         <div>{item.name}</div>
-        <div>${item.price}</div>
+        <div>${item.price.toFixed(2)}</div>
         <button onClick={addToCart}>ADD TO CART</button>
       </div>
     )
