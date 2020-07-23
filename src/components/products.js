@@ -1,14 +1,29 @@
 import React from "react"
+import { useState } from "react"
 // import { Link } from "gatsby"
 
 // import productsLocal from "../../db/twitch-stickers.json"
 
 const Products = props => {
-  const addToCart = e => {
-    console.log("Item added to cart" + e.target)
+  const [cartItems, setCartItems] = useState([])
+
+  const addToCart = async e => {
+    e.preventDefault()
+    let thisItemName = e.target
+      .querySelector("[name=itemName]")
+      .getAttribute("value")
+    //const item = new FormData(e.target).get("name")
+    const item = e.target.querySelector("[name=itemName]").getAttribute("value")
+    const price = e.target
+      .querySelector("[name=itemPrice]")
+      .getAttribute("value")
+
+    let newState = [...cartItems, { item: item, price: price }]
+    setCartItems(newState)
+    console.log(`Item added to cart`)
   }
 
-  // map through available products
+  // map through all products
   const allProducts = props.products.map((item, index) => {
     return (
       <div
@@ -20,10 +35,16 @@ const Products = props => {
         }}
         key={index}
       >
-        <img style={{ maxWidth: "300px" }} src={item.img} alt={item.name} />
-        <div>{item.name}</div>
-        <div>${item.price.toFixed(2)}</div>
-        <button onClick={addToCart}>ADD TO CART</button>
+        <form onSubmit={addToCart}>
+          <img style={{ maxWidth: "300px" }} src={item.img} alt={item.name} />
+          <div name="itemName" value={item.name}>
+            {item.name}
+          </div>
+          <div name="itemPrice" value={item.price}>
+            ${item.price.toFixed(2)}
+          </div>
+          <button>ADD TO CART</button>
+        </form>
       </div>
     )
   })

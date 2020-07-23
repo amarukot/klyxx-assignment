@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
             bottom: "0",
             left: "0",
             width: "100%",
+            backgroundColor: "white",
           }}
         >
           © {new Date().getFullYear()} -{` `}
