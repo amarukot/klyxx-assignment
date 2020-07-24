@@ -2,7 +2,8 @@ import { Link } from "gatsby"
 // import PropTypes from "prop-types"
 import React from "react"
 
-const Navbar = () => {
+const Navbar = ({ cartItems }) => {
+  console.log(`${cartItems} in navbar`)
   return (
     <div
       style={{
@@ -29,7 +30,7 @@ const Navbar = () => {
             Home
           </h1>
         </Link>
-        <Link to="/cart/">
+        <Link to="/cart/" state={{ cartItems }}>
           <h1
             style={{
               margin: 0,

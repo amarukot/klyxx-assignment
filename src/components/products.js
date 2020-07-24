@@ -1,8 +1,5 @@
-import React from "react"
-import { useState } from "react"
-// import { Link } from "gatsby"
-
-// import productsLocal from "../../db/twitch-stickers.json"
+import React, { useState } from "react"
+import { Link, navigate } from "gatsby"
 
 const Products = ({ products, addToCart }) => {
   // map through all products

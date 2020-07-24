@@ -13,10 +13,12 @@ import PropTypes from "prop-types"
 import Navbar from "./navbar"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, cartItems }) => {
+  console.log(`${cartItems} in layout component`)
+
   return (
     <>
-      <Navbar />
+      <Navbar cartItems={cartItems} />
       <div
         style={{
           margin: `0 auto`,
