@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ location }) => {
   // if (!cartItems) return <h1>NO ITEMS IN CART</h1>
 
   return (

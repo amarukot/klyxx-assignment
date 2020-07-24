@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 
 const Navbar = ({ cartItems }) => {
-  console.log(`${cartItems} in navbar`)
   return (
     <div
       style={{
@@ -29,7 +28,7 @@ const Navbar = ({ cartItems }) => {
             Home
           </h1>
         </Link>
-        <Link to="/cart/" cartItems={cartItems}>
+        <Link to="/cart/" state={cartItems}>
           <h1
             style={{
               margin: 0,
