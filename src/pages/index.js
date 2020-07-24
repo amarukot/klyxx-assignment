@@ -1,11 +1,8 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { navigate } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Products from "../components/products"
-import Cart from "./cart"
 
 const IndexPage = () => {
   const [products, setProducts] = useState([])
@@ -22,7 +19,6 @@ const IndexPage = () => {
     let newState = [...cartItems, { item: item, price: price }]
     setCartItems(newState)
     console.log(`${item} added to cart`)
-
     // navigate("/cart/", { state: { cartItems } })
   }
 
@@ -35,13 +31,10 @@ const IndexPage = () => {
   }, [])
 
   return (
-    // <Layout cartItems={cartItems}>
     <>
       <SEO title="Twitch Sticker Store" />
       <Products products={products} addToCart={addToCart} />
-      <Cart style={{ display: "none" }} cartItems={cartItems} />
     </>
-    // </Layout>
   )
 }
 

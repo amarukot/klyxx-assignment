@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { Link, navigate } from "gatsby"
 
 const Products = ({ products, addToCart }) => {
-  // map through all products
+  // get all products
   const allProducts = products.map((item, index) => {
     return (
       <div

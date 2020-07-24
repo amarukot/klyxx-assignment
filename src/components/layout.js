@@ -8,23 +8,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useState } from "react"
-// import { useStaticQuery, graphql } from "gatsby"
 
-// import Header from "./header"
 import Navbar from "./navbar"
 import "./layout.css"
-import IndexPage from "../pages"
 
 const Layout = ({ children }) => {
-  const [testState, setTestState] = useState(["testing"])
-
   return (
     <>
       <Navbar />
       <div
         style={{
           margin: `0 auto`,
-          // maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
