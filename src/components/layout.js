@@ -12,7 +12,8 @@ import { useState } from "react"
 import Navbar from "./navbar"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = props => {
+  const [test, setTest] = useState(["this is a test"])
   return (
     <>
       <Navbar />
@@ -22,7 +23,7 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <main>{props.children}</main>
 
         <footer
           style={{
