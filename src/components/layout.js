@@ -7,18 +7,20 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { useState } from "react"
 // import { useStaticQuery, graphql } from "gatsby"
 
 // import Header from "./header"
 import Navbar from "./navbar"
 import "./layout.css"
+import IndexPage from "../pages"
 
-const Layout = ({ children, cartItems }) => {
-  console.log(`${cartItems} in layout component`)
+const Layout = ({ children }) => {
+  const [testState, setTestState] = useState(["testing"])
 
   return (
     <>
-      <Navbar cartItems={cartItems} />
+      <Navbar />
       <div
         style={{
           margin: `0 auto`,
@@ -27,6 +29,7 @@ const Layout = ({ children, cartItems }) => {
         }}
       >
         <main>{children}</main>
+
         <footer
           style={{
             textAlign: "center",

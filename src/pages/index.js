@@ -21,7 +21,7 @@ const IndexPage = () => {
 
     let newState = [...cartItems, { item: item, price: price }]
     setCartItems(newState)
-    console.log(`Item added to cart`)
+    console.log(`${item} added to cart`)
 
     // navigate("/cart/", { state: { cartItems } })
   }
@@ -39,6 +39,7 @@ const IndexPage = () => {
     <>
       <SEO title="Twitch Sticker Store" />
       <Products products={products} addToCart={addToCart} />
+      <Cart style={{ display: "none" }} cartItems={cartItems} />
     </>
     // </Layout>
   )

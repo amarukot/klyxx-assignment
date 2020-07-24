@@ -30,7 +30,7 @@ const Navbar = ({ cartItems }) => {
             Home
           </h1>
         </Link>
-        <Link to="/cart/" state={{ cartItems }}>
+        <Link to="/cart/" cartItems={cartItems}>
           <h1
             style={{
               margin: 0,
